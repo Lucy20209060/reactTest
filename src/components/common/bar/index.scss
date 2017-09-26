@@ -1,0 +1,38 @@
+$class-prefix:'Bar';		
+
+.#{$class-prefix}{			
+
+	&-wrap{ 					
+		height: .98rem;
+	    width: 100%;
+	    position: fixed;
+	    bottom: 0;
+	    left: 0;
+	    display: flex;
+	    background: #fff;
+	    border: .01rem solid #eee;
+	    a{
+	    	text-align: center;
+		    width: 25%;
+		    height: 100%;
+		    flex: 1;
+		    display: flex;
+		    flex-direction: column;
+		    text-align: center;
+	    }
+	    i{
+		    width: 100%;
+		    color: #666;
+		    margin-top: .1rem;
+		    font-size: .4rem;
+	    }
+	    span{
+		    width: 100%;
+		    font-size: .22rem;
+		    color: #333;
+	    }
+	    .active i,.active span{
+	    	color: #009e4d;
+	    }
+	}
+}

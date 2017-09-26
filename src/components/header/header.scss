@@ -1,0 +1,29 @@
+/*
+	$class-prefix 类名前缀
+	& 父类名
+*/
+
+$class-prefix:'header';			/*定义类名前缀*/
+
+.#{$class-prefix}{				/*.header*/
+
+	&-wrap{ 					/*.header-wrap*/
+		
+		background: yellow;
+		
+		&-h5{ 					/*header-wrap-h5*/
+			color: pink;
+		}
+		
+		.tem{					/*.header-wrap .tem*/
+			color: #333;
+		}
+		
+		p{						/*.header-wrap p*/
+			font-size: 30px;
+			input{				/*.header-wrap p input*/
+				height: 3rem;
+			}
+		}
+	}
+}

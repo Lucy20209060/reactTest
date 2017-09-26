@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*
+	$class-prefix 类名前缀
+	& 父类名
+*/
+/*定义类名前缀*/
+.header {
+  /*.header*/ }
+  .header-wrap {
+    /*.header-wrap*/
+    background: yellow; }
+    .header-wrap-h5 {
+      /*header-wrap-h5*/
+      color: pink; }
+    .header-wrap .tem {
+      /*.header-wrap .tem*/
+      color: #333; }
+    .header-wrap p {
+      /*.header-wrap p*/
+      font-size: 30px; }
+      .header-wrap p input {
+        /*.header-wrap p input*/
+        height: 3rem; }

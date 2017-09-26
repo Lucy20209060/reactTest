@@ -1,0 +1,47 @@
+.App-wrap header {
+  height: .88rem;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  line-height: .88rem; }
+  .App-wrap header div {
+    width: 1.5rem;
+    height: 100%;
+    float: left;
+    padding-left: .3rem;
+    box-sizing: border-box; }
+    .App-wrap header div a {
+      padding-right: 8px;
+      position: relative;
+      font-size: .28rem; }
+      .App-wrap header div a:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 4px;
+        border: 3px solid #666;
+        border-top-color: transparent;
+        border-left-color: transparent; }
+  .App-wrap header p {
+    width: calc(100% - 3rem);
+    text-align: center;
+    float: left;
+    height: 100%; }
+    .App-wrap header p img {
+      display: inline-block;
+      width: 45%;
+      margin-top: .25rem; }
+  .App-wrap header .iconfont {
+    float: left;
+    width: 1.5rem;
+    height: 100%;
+    text-align: right;
+    line-height: .88rem;
+    font-size: .4rem;
+    padding-right: .3rem;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box; }
