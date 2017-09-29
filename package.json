@@ -2,7 +2,7 @@
   "name": "test6-4-my-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://dev.anchumall.cc:9550",
+  "proxy": "http://dev.anchumall.cc",
   "dependencies": {
     "antd": "^2.11.0",
     "antd-mobile": "^1.6.5",

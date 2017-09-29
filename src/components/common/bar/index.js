@@ -17,7 +17,7 @@ export default class Bar extends React.Component{
 					<span>分类</span>
 				</NavLink>
 
-				<NavLink to="/car">
+				<NavLink to="/car/56">
 					<i className="iconfont icon-gouwuche"></i>
 					<span>购物车</span>
 				</NavLink>
@@ -26,10 +26,6 @@ export default class Bar extends React.Component{
 					<i className="iconfont icon-wode"></i>
 					<span>我的</span>
 				</NavLink>
-				
-		        {/*<NavLink to="/about">About</NavLink></p>
-		        <NavLink to="/cart/45">cart</NavLink></p>
-		        <NavLink to="/mine">mine</NavLink></p>*/}
 			</div>
 		);
 	}
