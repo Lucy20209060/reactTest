@@ -12,16 +12,6 @@ export default class Header extends React.Component{
 		}
 	}
 
-	// componentDidMount() {
-	// 	ListStore.addChangeListener(this._onChange);
-	// 	console.log(111)
-	// }
-
-	// componentWillUnmount() {
-	// 	ListStore.removeChangeListener(this._onChange);
-	// 	console.log(222)
-	// }
-
 	_onChange() {
 		this.setState({
 			items: ListStore.getAll()
@@ -30,9 +20,7 @@ export default class Header extends React.Component{
 	}
 
 
-	// var itemHtml = this.state.items.map(function (listItem, i) {
-	// 		return <li key={i}>{listItem}</li>;
-	// 	});
+
 	createNewItem(event) {
 		const temValue = 'lucy'
 	    ButtonActions.addNewItem(temValue);
@@ -40,12 +28,16 @@ export default class Header extends React.Component{
 	    this.setState({
 			items: ListStore.getAll()
 	    })
+
+	    
 	    console.log(this.state.items)
 	}
+	
 
 	render(){
 		return (
 		  	<div>
+		  		<p style={{fontSize:'40px',color:'red'}}>flux测试</p>
 		  		<button onClick={this.createNewItem.bind(this)}>点击</button>
 				{
 					this.state.items.map((e,index) => {
