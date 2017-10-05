@@ -36,33 +36,19 @@ ReactDOM.render(
 			*/}
 
 			{/* 重定向 此时路由必须严格模式 exact '/' => '/index' */}
-			<Route 
-				exact 
-				path="/" 
-				render={ () => (
-						<Redirect to="/index" />
-					) 
-				} />
+			<Route exact path="/" render={ () => ( <Redirect to="/index" /> ) } />
 
 		    <Route path="/index" component={ App }/>
 
-		    <Route 
-		    	path="/classify" 
-		    	component={
-		    		loginSign ? Classify : Login
-		    	} />
+		    <Route path="/classify" component={ loginSign ? Classify : Login } />
 
-		    <Route 
-		    	path="/car/:id" 
-		    	component={
-			    	loginSign ? Car : Login
-			    } />
+		    <Route path="/car/:id" component={ loginSign ? Car : Login } />
 
-		    <Route 
-			    path="/mine" 
-			    component={
-			    	loginSign ? Mine : Login
-			    } />
+		    <Route path="/mine" component={ loginSign ? Mine : Login } />
+
+			<Route path="/news" component={ loginSign ? News : Login } />
+
+			<Route path="/reduxTest" component={ loginSign ? ReduxTest : Login } />
 
 		    <Route path="/login" component={Login} />
 

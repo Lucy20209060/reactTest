@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css'
 import Bar from '../common/bar/index';
-import { api_getlist,goods } from '../../api';
+import { api_getlist,goods } from '../../tools/api';
 
 export default class Car extends React.Component{  
 	constructor(props) {  
@@ -23,13 +23,25 @@ export default class Car extends React.Component{
 
 
     }
+
+
+
     searchcategory(){	
-        fetch(goods.searchcategory,{
-        	id:12,
-        	page:1,
-        	site_id:'',
-        	show_site_image:0
-        })
+		// fetch(goods.searchcategory,{
+		// 	method: 'post',
+		// 	body: JSON.stringify({
+		// 		id:12,
+		// 		page:1,
+		// 		site_id:'',
+		// 		show_site_image:0
+		// 	})
+		// })
+		fetch(goods.searchcategory,{
+			id:12,
+			page:1,
+			site_id:'',
+			show_site_image:0
+		})
 		.then(response => response.json())  
         .then(res => { 
 
