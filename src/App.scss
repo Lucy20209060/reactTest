@@ -1,29 +1,30 @@
 $class-prefix:'App';
 
 .#{$class-prefix}{
-   &-wrap{
-      header{
-         height: .88rem;
-         background: #fff;
-         width: 100%;
-         position: fixed;
-         top: 0;
-         left: 0;
-         z-index: 999;
-         line-height: .88rem;
+    &-wrap{
+        height: 100%;
+        header{
+            height: .88rem;
+            background: #fff;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            line-height: .88rem;
 
-         div{
-            width: 1.5rem;
-            height: 100%;
-            float: left;
-            padding-left: .3rem;
-            box-sizing: border-box;
+            div{
+                width: 1.5rem;
+                height: 100%;
+                float: left;
+                padding-left: .3rem;
+                box-sizing: border-box;
             a{
                padding-right: 8px;
                position: relative;
                font-size: .28rem;
 
-               &:before{
+                &:before{
                   content: '';
                   position: absolute;
                   right: 0;
@@ -31,10 +32,10 @@ $class-prefix:'App';
                   border: 3px solid #666;
                   border-top-color: transparent;
                   border-left-color: transparent;
-               }
+                }
             }
-         }
-         p{
+        }
+        p{
             width: calc(100% - 3rem);
             text-align: center;
             float: left;
@@ -45,7 +46,7 @@ $class-prefix:'App';
                margin-top: .25rem;
             }
          }
-         .iconfont{
+        .iconfont{
             float: left;
             width: 1.5rem;
             height: 100%;
@@ -59,8 +60,5 @@ $class-prefix:'App';
          }
          
       }
-    
-    
-    
    }
 }

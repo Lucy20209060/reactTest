@@ -6,7 +6,7 @@
   left: 0;
   display: flex;
   background: #fff;
-  border: .01rem solid #eee; }
+  border-top: .01rem solid #eee; }
   .Bar-wrap a {
     text-align: center;
     width: 25%;

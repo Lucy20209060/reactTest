@@ -1,5 +1,5 @@
 运行
-npm run build
+npm start
 监听sass
 npm run watch-css
 
