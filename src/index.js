@@ -52,8 +52,10 @@ ReactDOM.render(
 
 		    <Route path="/login" component={Login} />
 
-		    <Route path="/reduxTest" component={ReduxTest} />
-
+			{/*
+				404页面 重定向到某页面
+		    <Route path="/**" render={ () => ( <Redirect to="/login" /> ) } />
+			*/}
         
 
 			{/*
@@ -64,10 +66,12 @@ ReactDOM.render(
 		          : <Redirect to="/new/login" />
 		         )} 
 
-			    <Route path="/header" component={Header} onEnter={console.log('11111111111')}></Route>
+			    <Route path="/header" component={Header} onEnter={console.log('111')}></Route>
 			*/}
 
 		</div>
-	</BrowserRouter>,document.getElementById('root')
+	</BrowserRouter>,
+	document.getElementById('root')
 );
+
 registerServiceWorker();

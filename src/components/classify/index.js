@@ -6,20 +6,22 @@ import Bar from '../common/bar/index';
 
 import Header 	from '../header/header';
 
-import ReactMixin from 'react-mixin'
-// import {goback} from '../mixin'
+// import ReactMixin from 'react-mixin'
+import {goback} from '../../tools/common'
 // console.log(goback)
 
 export default class Classify extends React.Component{
 	// 父组件传递参数到子组件 通过this.props.userName 接收
 	test(event){
-		// goback();
+		const par = goback(111);
+		console.log(par)
 	}
+
 	render(){ 
 		return (
 		  	<div>
 		  		<p onClick={this.test.bind(this)}>Classify</p>
-		  		<Header userName="hhhhhh" userId="15" />
+		  		<Header userName="hhhhhh" userId="15" handleChildvalue={this.test.bind(this)} />
 		  		<Bar />
 		  	</div>
 		) 

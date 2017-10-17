@@ -13,7 +13,11 @@ export default class Header extends React.Component{
 		  	<div>
 		  		<MineChild />
 		  		<h5>{year}年</h5>
-		  		<div className="tem">哈哈哈哈{this.props.userName}{this.props.userId}</div>
+		  		<div className="tem">哈哈哈哈，userName：{this.props.userName}，userId：{this.props.userId}</div>
+
+		  		{/*
+					触发父组件classify/index.js 中的 handleChildvalue 方法
+		  		*/}
 		  		<p>子组件input:<input type="text" onChange={this.props.handleChildvalue} /></p>
 		  		<i className="iconfont icon-weibiaoti-5"></i>
 		  	</div>

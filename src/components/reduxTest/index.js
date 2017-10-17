@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Header extends React.Component{
+export default class reduxTest extends React.Component{
 
 	constructor(props) { // 设置初始值
 	    super(props);
@@ -14,7 +14,7 @@ export default class Header extends React.Component{
 	render(){
 		return (
 		  	<div>
-		  		readuxtest页面
+		  		reduxTest页面
 		  	</div>
 		) 
 	}
