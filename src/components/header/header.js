@@ -2,7 +2,6 @@ import React from 'react';
 import './header.css'
 import MineChild from '../mineChild';
 
-import Bar from '../common/bar/index';
 import PropTypes from 'prop-types';
 
 const year = new Date().getFullYear();

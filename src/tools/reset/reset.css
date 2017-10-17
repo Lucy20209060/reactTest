@@ -25,7 +25,7 @@ html,body{
 i,em{
 	font-style:normal;
 }
-input,textarea,button,a,span,i,dd,li,div{
+textarea,button,a,span,i,dd,li,div{
 	outline:none;
     -webkit-appearance: none;
     tap-highlight-color:rgba(0,0,0,0);

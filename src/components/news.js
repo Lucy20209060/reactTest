@@ -8,7 +8,12 @@ export default class Header extends React.Component{
 	    super(props);
 	    this.state = {
 	    	items: [],
-	    	itemHtml:''
+	    	itemHtml:'',
+
+	    	sign1:false,
+	    	sign2:false,
+	    	sign3:false,
+	    	sign4:false
 		}
 	}
 
@@ -19,7 +24,16 @@ export default class Header extends React.Component{
 		console.log('_onChange')
 	}
 
+	// 多选改变状态
+	checkboxonChange(val){
 
+		let obj = new Object();
+
+		// obj[sign1]     = !this.state[sign1];
+        obj[`sign${val}`] = !this.state[`sign${val}`];
+
+		this.setState(obj);
+	}
 
 	createNewItem(event) {
 		const temValue = 'lucy'
@@ -28,15 +42,21 @@ export default class Header extends React.Component{
 	    this.setState({
 			items: ListStore.getAll()
 	    })
-
-	    
-	    console.log(this.state.items)
 	}
-	
+
 
 	render(){
+		
+
 		return (
 		  	<div>
+				<label><input name="Fruit" type="checkbox" checked={this.state.sign1} onChange={this.checkboxonChange.bind(this,1)} />苹果 </label> 
+				<label><input name="Fruit" type="checkbox" checked={this.state.sign2} onChange={this.checkboxonChange.bind(this,2)} />桃子 </label> 
+				<label><input name="Fruit" type="checkbox" checked={this.state.sign3} onChange={this.checkboxonChange.bind(this,3)} />香蕉 </label> 
+				<label><input name="Fruit" type="checkbox" checked={this.state.sign4} onChange={this.checkboxonChange.bind(this,4)} />梨 </label>
+
+
+
 		  		<p style={{fontSize:'40px',color:'red'}}>flux测试</p>
 		  		<button onClick={this.createNewItem.bind(this)}>点击</button>
 				{
