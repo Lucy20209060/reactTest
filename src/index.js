@@ -52,8 +52,6 @@ ReactDOM.render(
 
 		    <Route path="/login" component={Login} />
 
-		    <Route path="/news" component={News} />
-
 		    <Route path="/reduxTest" component={ReduxTest} />
 
         
