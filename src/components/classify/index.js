@@ -8,13 +8,14 @@ import Header 	from '../header/header';
 
 // import ReactMixin from 'react-mixin'
 import {goback} from '../../tools/common'
-// console.log(goback)
+
+import store from '../../redux/store/index'
 
 export default class Classify extends React.Component{
 	// 父组件传递参数到子组件 通过this.props.userName 接收
 	test(event){
 		const par = goback(111);
-		console.log(par)
+		console.log(store.getState())
 	}
 
 	render(){ 
