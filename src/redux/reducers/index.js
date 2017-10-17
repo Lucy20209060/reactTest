@@ -5,7 +5,7 @@ import { user } from './user'
 
 const reducer = combineReducers({
 	number,
-	// user,
+	user,
 })
 
 export default reducer;

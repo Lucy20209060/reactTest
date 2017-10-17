@@ -9,6 +9,8 @@ import {add,cut} from '../../redux/actions/num'
 
 import {set,ret} from '../../redux/actions/user'
 
+import {connect} from 'react-redux';
+
 // function counter (state = 0, action) {
 // 	switch (action.type) {
 // 		case 'INCREMENT':
@@ -25,6 +27,9 @@ import {set,ret} from '../../redux/actions/user'
 // );
 import { NavLink } from 'react-router-dom'; // NavLink有激活class Link没有
 
+
+// https://github.com/lipeishang/react-redux-connect-demo/blob/master/public/src/containers/App.js
+
 export default class reduxTest extends React.Component{
 
 	constructor(props) { // 设置初始值
@@ -38,6 +43,7 @@ export default class reduxTest extends React.Component{
 	tap(){
 		add();
 		ret({a:1,b:3});
+		console.log(store.getState())
 
 		this.setState({
 			itemHtml: store.getState()

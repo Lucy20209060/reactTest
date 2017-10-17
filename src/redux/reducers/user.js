@@ -1,17 +1,23 @@
+import Immutable from 'immutable';
 
-let item;
 
-export const user = (state = item,action = {}) => {
-	console.log(action)
+const initialState = Immutable.fromJS({
+  a: null,
+  b: null
+});
+
+export const user = (state = initialState,action = {}) => {
+	// console.log(initialState)
+	// return
 	switch(action.type){
 		case 'RETUSER':
 			// return state + 1;
-			return
+			return state.set(
+		        'a': action.action.a
+		      );
 		case 'SETUSER':
-			// return state - 1;
-			return
+			return state -1;
 		default:
-			// return state;
-			return
+			return state;
 	}
 }
