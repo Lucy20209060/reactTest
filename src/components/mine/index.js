@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css'
+import './index.css';
 import Bar from '../common/bar/index';
 import mineBg from '../../images/minebg.png'
 import mineImg from '../../images/mine.png'

@@ -21,9 +21,8 @@ import Classify 	from './components/classify/index';
 import Car 			from './components/car/index';
 import Mine 		from './components/mine/index';
 import Login 		from './components/login/index';
-import News 		from './components/news';
-import ReduxTest 	from './components/reduxTest';
-
+import News 		from './components/news/index';
+import ReduxTest 	from './components/reduxTest/index'
 
 // 登录标志
 const loginSign = true
@@ -52,6 +51,10 @@ ReactDOM.render(
 			<Route path="/reduxTest" component={ loginSign ? ReduxTest : Login } />
 
 		    <Route path="/login" component={Login} />
+
+		    <Route path="/news" component={News} />
+
+		    <Route path="/reduxTest" component={ReduxTest} />
 
         
 

@@ -1,6 +1,9 @@
 import React from 'react';
-var ButtonActions = require('../flux/action');
-var ListStore = require('../flux/store');
+import './index.css';
+var ButtonActions = require('../../flux/action');
+var ListStore = require('../../flux/store');
+
+
 
 export default class Header extends React.Component{
 
