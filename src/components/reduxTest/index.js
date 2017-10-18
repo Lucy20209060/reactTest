@@ -1,34 +1,29 @@
 import React from 'react';
-
-// import { createStore } from 'redux';
-
-// let store = createStore(counter);
+import './index.css';
 
 import store from '../../redux/store/index'
 import {add,cut} from '../../redux/actions/num'
 
-import {set,ret} from '../../redux/actions/user'
+import {ret} from '../../redux/actions/user'
 
-import {connect} from 'react-redux';
+import { NavLink } from 'react-router-dom';
+// import {connect} from 'react-redux';
 
-// function counter (state = 0, action) {
-// 	switch (action.type) {
-// 		case 'INCREMENT':
-// 			return state + 1;
-// 		case 'DECREMENT':
-// 			return state - 1;
-// 		default:
-// 			return state;
-// 	}
-// }
 
 // store.subscribe(() =>
 //   console.log(store.getState())
 // );
-import { NavLink } from 'react-router-dom'; // NavLink有激活class Link没有
 
 
 // https://github.com/lipeishang/react-redux-connect-demo/blob/master/public/src/containers/App.js
+
+// @connect(
+// 	(state) => {
+// 		return({
+// 			user:state.user
+// 		})
+// 	},{}
+// )
 
 export default class reduxTest extends React.Component{
 
@@ -41,6 +36,8 @@ export default class reduxTest extends React.Component{
 	}
 
 	tap(){
+		// this.props.history.push('/index');
+		// return
 		add();
 		ret({a:1,b:3});
 		console.log(store.getState())
@@ -66,7 +63,7 @@ export default class reduxTest extends React.Component{
 	render(){
 
 		return (
-		  	<div>
+		  	<div className="reduxTest-wrap">
 		  		<i>{this.state.itemHtml.number}</i>
 		  		<p><button onClick={this.tap.bind(this)}>INCREMENT</button></p>
 		  		<p><button onClick={this.tap2.bind(this)}>DECREMENT</button></p>

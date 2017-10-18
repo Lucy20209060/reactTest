@@ -1,0 +1,13 @@
+$class-prefix:'reduxTest';
+
+.#{$class-prefix}{
+	&-wrap{
+		button{
+			margin: 5px;
+			padding: 10px;
+			outline: none;
+			background: #009e4d;
+			border: 0;
+		}
+	}
+ }

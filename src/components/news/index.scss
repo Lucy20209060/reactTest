@@ -1,6 +1,14 @@
-button{
-	border: 1px solid #333;
-	background: #009e4d;
-	padding: 10px;
-	color: #fff;
-}
+
+
+$class-prefix:'news';
+
+.#{$class-prefix}{
+   &-wrap{
+		button{
+			border: 1px solid #333;
+			background: #009e4d;
+			padding: 10px;
+			color: #fff;
+		}
+   }
+ }

@@ -1,47 +1,67 @@
 import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route,Redirect } from 'react-router-dom';
 
-// import 'whatwg-fetch';
-// import 'es6-promise';
+import Index 		from './components/index/index'
+import Classify 	from './components/classify/index';
+import Car 			from './components/car/index';
+import Mine 		from './components/mine/index';
+import Login 		from './components/login/index';
+import News 		from './components/news/index';
+import ReduxTest 	from './components/reduxTest/index'
+import About 		from './components/about/index'
 
-// 引入子组件
-import Bar from './components/common/bar/index';
-import logo from './images/jishi.png'
-import { Link } from 'react-router-dom';
+// 登录标志
+const loginSign = true
 
 export default class App extends React.Component{  
 
-	constructor(){
-		super();
-		this.state = {
-			siteInfo:{
-				id:0,
-				name:'全国'
-			}
-			
-		}
-	}
+	render(){
+		return(
+			<Router>
+				<div style={{height:'100%'}}>
 
+					{/*
+						路由配置
+					*/}
 
-	render() {
-		return (
-			<div className="App-wrap">
+					{/* 重定向 此时路由必须严格模式 exact '/' => '/index' */}
+					<Route exact path="/" render={ () => ( <Redirect to="/index" /> ) } />
 
-				<header>
-					<div>
-						<a href="javascript:;">{this.state.siteInfo.name}</a>
-					</div>
-					<p>
-						{/*引入图片*/}
-						<img src={logo} className="App-logo" alt="logo" />
-					</p>
-					{/* 引入iconfont */}
-					<Link to="/classify" className="iconfont icon-sousuo"></Link>
-				</header>
+					<Route path="/index" component={ loginSign ? Index : Login } />
 
-				<Bar />
-			</div>
-		);
+				    <Route path="/classify" component={ loginSign ? Classify : Login } />
+
+				    <Route path="/car/:id" component={ loginSign ? Car : Login } />
+
+				    <Route path="/mine" component={ loginSign ? Mine : Login } />
+
+					<Route path="/news" component={ loginSign ? News : Login } />
+
+					<Route path="/reduxTest" component={ loginSign ? ReduxTest : Login } />
+
+				    <Route path="/login" component={Login} />
+
+				    <Route path="/about" component={About} />
+
+					{/*
+						404页面 重定向到某页面
+				    <Route path="**" render={ () => ( <Redirect to="/index" /> ) } />
+					*/}
+		        
+
+					{/*
+						根据条件重定向
+					    render={() => (
+				          logined 
+				          ? <h1>欢迎来到登录页面</h1>
+				          : <Redirect to="/new/login" />
+				         )} 
+
+					    <Route path="/header" component={Header} onEnter={console.log('111')}></Route>
+					*/}
+
+				</div>
+			</Router>
+		)
 	}
 }

@@ -30,9 +30,8 @@ export default class Header extends React.Component{
 	// 多选改变状态
 	checkboxonChange(val){
 
-		let obj = new Object();
+		let obj = {};
 
-		// obj[sign1]     = !this.state[sign1];
         obj[`sign${val}`] = !this.state[`sign${val}`];
 
 		this.setState(obj);
@@ -52,7 +51,7 @@ export default class Header extends React.Component{
 		
 
 		return (
-		  	<div>
+		  	<div className="news-wrap">
 				<label><input name="Fruit" type="checkbox" checked={this.state.sign1} onChange={this.checkboxonChange.bind(this,1)} />苹果 </label> 
 				<label><input name="Fruit" type="checkbox" checked={this.state.sign2} onChange={this.checkboxonChange.bind(this,2)} />桃子 </label> 
 				<label><input name="Fruit" type="checkbox" checked={this.state.sign3} onChange={this.checkboxonChange.bind(this,3)} />香蕉 </label> 
