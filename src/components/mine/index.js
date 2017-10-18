@@ -8,6 +8,7 @@ import orderImg from '../../images/order.png'
 import contactImg from '../../images/contact.png'
 import helpImg from '../../images/help.png'
 
+import { NavLink } from 'react-router-dom';
 
 export default class Mine extends React.Component{
 	constructor(props) {
@@ -49,18 +50,18 @@ export default class Mine extends React.Component{
 		  		<dl className="Mine-func">
 		  			<dt>我的功能</dt>
 		  			<dd>
-		  				<a href="/">
+		  				<NavLink to="/reduxTest">
 		  					<img src={orderImg} alt="" />
 		  					<i>查看订单</i>
-		  				</a>
-		  				<a href="/">
+		  				</NavLink>
+		  				<NavLink to="/">
 		  					<img src={contactImg} alt="" />
 		  					<i>联系我们</i>
-		  				</a>
-		  				<a href="/">
+		  				</NavLink>
+		  				<NavLink to="/">
 		  					<img src={helpImg} alt="" />
 		  					<i>帮助</i>
-		  				</a>
+		  				</NavLink>
 		  			</dd>
 		  		</dl>
 		  		<Bar />
