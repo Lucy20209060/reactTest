@@ -39,7 +39,7 @@ export default class reduxTest extends React.Component{
 		// this.props.history.push('/index');
 		// return
 		add();
-		ret({a:1,b:3});
+		ret({a:'lucy',b:'啊啊啊五环你比四环多一环'});
 		console.log(store.getState())
 
 		this.setState({

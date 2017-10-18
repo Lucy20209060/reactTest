@@ -19,12 +19,7 @@ export default class App extends React.Component{
 		return(
 			<Router>
 				<div style={{height:'100%'}}>
-
-					{/*
-						路由配置
-					*/}
-
-					{/* 重定向 此时路由必须严格模式 exact '/' => '/index' */}
+				
 					<Route exact path="/" render={ () => ( <Redirect to="/index" /> ) } />
 
 					<Route path="/index" component={ loginSign ? Index : Login } />
@@ -42,23 +37,6 @@ export default class App extends React.Component{
 				    <Route path="/login" component={Login} />
 
 				    <Route path="/about" component={About} />
-
-					{/*
-						404页面 重定向到某页面
-				    <Route path="**" render={ () => ( <Redirect to="/index" /> ) } />
-					*/}
-		        
-
-					{/*
-						根据条件重定向
-					    render={() => (
-				          logined 
-				          ? <h1>欢迎来到登录页面</h1>
-				          : <Redirect to="/new/login" />
-				         )} 
-
-					    <Route path="/header" component={Header} onEnter={console.log('111')}></Route>
-					*/}
 
 				</div>
 			</Router>
