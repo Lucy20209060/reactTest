@@ -2,7 +2,6 @@
 
 import Immutable from 'seamless-immutable'
 
-
 const initialState = Immutable({
   a: null,
   b: null,
@@ -10,8 +9,7 @@ const initialState = Immutable({
 });
 
 export const user = (state = initialState,action = {}) => {
-	// console.log(111,action.action)
-	// return
+	// console.log(action.action)
 	switch(action.type){
 		case 'RETUSER':
 			return state.merge({
