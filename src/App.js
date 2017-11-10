@@ -38,6 +38,12 @@ export default class App extends React.Component{
 
 				    <Route path="/about" component={About} />
 
+			    	{/*
+				    <Route path="/404" component={About} />
+				    <Redirect from='*' to='/404' />
+
+			    	*/}
+
 				</div>
 			</Router>
 		)
