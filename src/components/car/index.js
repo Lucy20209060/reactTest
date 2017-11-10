@@ -71,7 +71,7 @@ export default class Car extends React.Component{
     }
 
     onTap(){
-        if(this.state.page == 1 ){
+        if(this.state.page === 1 ){
             this.setState({
                 page: 2
             });
@@ -84,9 +84,9 @@ export default class Car extends React.Component{
     }
 
 	render() {
-        const sty = this.state.page == 1 
-        ? { fontSize:'20px'}
-        : {fontSize:'30px'}
+        // const sty = this.state.page == 1 
+        // ? { fontSize:'20px'}
+        // : {fontSize:'30px'}
 
         const aa = 'red'
 		return (
@@ -94,10 +94,10 @@ export default class Car extends React.Component{
                 <p 
                     onClick={this.onTap.bind(this)} 
                     style={
-                        this.state.page == 1 ? {color:aa} : {color:'pink'}
+                        this.state.page === 1 ? {color:aa} : {color:'pink'}
                     }
                     className={
-                        this.state.page == 1 ? 'AA' : 'BB'
+                        this.state.page === 1 ? 'AA' : 'BB'
                     }
                 >{this.state.page}</p>
                 <p>{[888,<span>&copy;</span>,<i>9999</i>]}</p>
