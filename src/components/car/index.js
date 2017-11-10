@@ -100,7 +100,7 @@ export default class Car extends React.Component{
                         this.state.page === 1 ? 'AA' : 'BB'
                     }
                 >{this.state.page}</p>
-                <p>{[888,<span>&copy;</span>,<i>9999</i>]}</p>
+                <p>{[888,<span key={0}>&copy;</span>,<i key={1}>9999</i>]}</p>
 				{
                     this.state.text.map((e,index) => {
                         return (
