@@ -9,3 +9,4 @@ export const goback = (par) => {
 	}
 	return par + '啊啊啊五环你比四环多一环'
 }
+

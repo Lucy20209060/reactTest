@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css'
 import Bar from '../common/bar/index';
 import { api_getlist,goods } from '../../tools/api';
+import cs from 'classnames'
 
 export default class Car extends React.Component{  
 	constructor(props) {  
@@ -88,7 +89,13 @@ export default class Car extends React.Component{
         // ? { fontSize:'20px'}
         // : {fontSize:'30px'}
 
-        const aa = 'red'
+        // console.log(cs({
+        //                 'aa':true,
+        //                 'bb':this.state.page === 1
+        //             }))
+
+        const aa = 'red';
+
 		return (
 			<div className="Car-wrap">
                 <p 
@@ -97,7 +104,7 @@ export default class Car extends React.Component{
                         this.state.page === 1 ? {color:aa} : {color:'pink'}
                     }
                     className={
-                        this.state.page === 1 ? 'AA' : 'BB'
+                        `${this.state.page === 1 ? 'AA' : 'BB'} CC DD`
                     }
                 >{this.state.page}</p>
                 <p>{[888,<span key={0}>&copy;</span>,<i key={1}>9999</i>]}</p>
