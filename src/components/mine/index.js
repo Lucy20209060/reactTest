@@ -17,13 +17,16 @@ export default class Mine extends React.Component{
         	mobile:'17681886725',
         	verify:-1,
         	userId:0
-    	};
+    	}
     }
 	render(){ 
 		// 背景图
 		let divStyle = {
 		    background:'url('+mineBg+') 0 0/cover no-repeat'
 		}
+
+		const {location} = this.props;
+		console.log(location)
 
 		return (
 		  	<div className="Mine-wrap">
