@@ -2,7 +2,6 @@ import React from 'react';
 import './index.css'
 import Bar from '../common/bar/index';
 import { api_getlist,goods } from '../../tools/api';
-import cs from 'classnames'
 
 export default class Car extends React.Component{  
 	constructor(props) {  
