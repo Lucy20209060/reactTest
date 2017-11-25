@@ -14,10 +14,32 @@ console.log(classN)
 
 export default class Index extends React.Component{
 
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	    	
+		}
+	}
+	
+	// 自动绑定this测试
+	testClick1(index){
+		console.log(index)
+	}
+	testClick2(index){
+		console.log(index)
+	}
+
 	render(){ 
 		return (
 		  	<div>
 		  		<i className={classN}>index page</i>
+		  		<br />
+		  		<button onClick={this.testClick1.bind(this,`${tem}-item`)}>testClick1</button>
+		  		<br />
+		  		<button onClick={() => this.testClick2(2222)}>testClick2</button>
+
+
+
 		  		<Bar />
 		  	</div>
 		) 
