@@ -30,8 +30,14 @@ export default class Index extends React.Component{
 	}
 
 	render(){ 
+		const style = `
+			i{
+				color:red
+			}
+		`
 		return (
 		  	<div>
+				<style dangerouslySetInnerHTML={{ __html: style }}></style>
 		  		<i className={classN}>index page</i>
 		  		<br />
 		  		<button onClick={this.testClick1.bind(this,`${tem}-item`)}>testClick1</button>
