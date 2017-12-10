@@ -31,7 +31,11 @@ export default class Index extends React.Component{
 	}
 
 	handleChangeComplete = (color) => {
-    	this.setState({ background: color.hex });
+    	this.setState({ 
+    		background: color.hex 
+    	},()=>{
+    		console.log('修改成功')
+    	});
 	}
 
 	render(){ 

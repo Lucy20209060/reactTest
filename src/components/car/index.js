@@ -3,6 +3,8 @@ import './index.css'
 import Bar from '../common/bar/index';
 import { api_getlist,goods } from '../../tools/api';
 
+import { get, post } from '../../tools/fetch/index' 
+
 export default class Car extends React.Component{  
 	constructor(props) {  
         super(props);   
@@ -23,13 +25,29 @@ export default class Car extends React.Component{
         this.searchcategory();
 
 
+        // post(goods.searchcategory, {
+
+        get(goods.searchcategory, {
+            id:12,
+            page:1,
+            site_id:'',
+            show_site_image:0
+        }).then(res => {
+            return res.json()
+        }).then(json => {
+            console.log(json)
+        })
     }
 
 
 
     searchcategory(){	
+        /*
+            原生fetch操作 post 
+            get操作只能将参数拼接在url中
+        */
 		// fetch(goods.searchcategory,{
-		// 	method: 'post',
+		// 	method: 'POST',
 		// 	body: JSON.stringify({
 		// 		id:12,
 		// 		page:1,
@@ -37,20 +55,14 @@ export default class Car extends React.Component{
 		// 		show_site_image:0
 		// 	})
 		// })
-		fetch(goods.searchcategory,{
-			id:12,
-			page:1,
-			site_id:'',
-			show_site_image:0
-		})
-		.then(response => response.json())  
-        .then(res => { 
+		// .then(response => response.json())  
+  //       .then(res => { 
 
-            console.log(res)
-        })  
-        .catch((error) => {  
-            console.log("error");  
-        });
+  //           console.log(res)
+  //       })  
+  //       .catch((error) => {  
+  //           console.log("error");  
+  //       });
     }
 
 	getNet(){ 
