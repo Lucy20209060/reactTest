@@ -25,9 +25,8 @@ export default class Car extends React.Component{
         this.searchcategory();
 
 
-        // post(goods.searchcategory, {
-
-        get(goods.searchcategory, {
+        post(goods.searchcategory, {
+        // get(goods.searchcategory, {
             id:12,
             page:1,
             site_id:'',
@@ -56,13 +55,13 @@ export default class Car extends React.Component{
 		// 	})
 		// })
 		// .then(response => response.json())  
-  //       .then(res => { 
+        // .then(res => { 
 
-  //           console.log(res)
-  //       })  
-  //       .catch((error) => {  
-  //           console.log("error");  
-  //       });
+        //   console.log(res)
+        // })  
+        // .catch((error) => {  
+        //   console.log("error");  
+        // });
     }
 
 	getNet(){ 
