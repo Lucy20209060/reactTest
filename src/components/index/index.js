@@ -2,6 +2,7 @@ import React from 'react';
 import cs from 'classnames';
 import './index.css';
 import Bar from '../common/bar/index';
+import { SketchPicker } from 'react-color'
 
 const tem = 'banner'
 let classN = cs({
@@ -17,7 +18,7 @@ export default class Index extends React.Component{
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	    	
+	    	background:'#333'
 		}
 	}
 	
@@ -29,6 +30,10 @@ export default class Index extends React.Component{
 		console.log(index)
 	}
 
+	handleChangeComplete = (color) => {
+    	this.setState({ background: color.hex });
+	}
+
 	render(){ 
 		const style = `
 			i{
@@ -36,7 +41,7 @@ export default class Index extends React.Component{
 			}
 		`
 		return (
-		  	<div>
+		  	<div style={{background:this.state.background}}>
 				<style dangerouslySetInnerHTML={{ __html: style }}></style>
 		  		<i className={classN}>index page</i>
 		  		<br />
@@ -44,7 +49,10 @@ export default class Index extends React.Component{
 		  		<br />
 		  		<button onClick={() => this.testClick2(2222)}>testClick2</button>
 
-
+		  		<SketchPicker 
+          			color={ this.state.background }
+              		onChangeComplete={ this.handleChangeComplete.bind(this) }
+              	/>
 
 		  		<Bar />
 		  	</div>
