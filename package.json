@@ -24,6 +24,7 @@
     "babel-plugin-import": "^1.4.0",
     "css-loader": "^0.28.7",
     "http-proxy-middleware": "^0.17.4",
+    "jest": "^21.2.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "node-sass-chokidar": "0.0.3",
