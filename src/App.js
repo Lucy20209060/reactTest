@@ -6,9 +6,10 @@ import Classify 	from './components/classify/index';
 import Car 			from './components/car/index';
 import Mine 		from './components/mine/index';
 import Login 		from './components/login/index';
-import News 		from './components/news/index';
+import FluxTest 		from './components/fluxTest/index';
 import ReduxTest 	from './components/reduxTest/index'
 import About 		from './components/about/index'
+import Diff 		from './components/diff/index'
 
 // 登录标志
 const loginSign = true
@@ -30,13 +31,15 @@ export default class App extends React.Component{
 
 				    <Route path="/mine" component={ loginSign ? Mine : Login } />
 
-					<Route path="/news" component={ loginSign ? News : Login } />
+					<Route path="/fluxTest" component={ loginSign ? FluxTest : Login } />
 
 					<Route path="/reduxTest" component={ loginSign ? ReduxTest : Login } />
 
 				    <Route path="/login" component={Login} />
 
 				    <Route path="/about" component={About} />
+
+				    <Route path="/diff" component={Diff} />
 
 			    	{/*
 				    <Route path="/404" component={About} />
