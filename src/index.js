@@ -12,6 +12,8 @@ import { Provider } from 'react-redux'
 import store from './redux/store/index'
 import App from './App'
 
+import 'antd/dist/antd.css';
+
 // 基础css , iconfont.css , rem.css
 import './tools/reset/reset.css';
 import './tools/font/iconfont.css';
