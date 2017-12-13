@@ -59,12 +59,35 @@ export default class Diff extends React.Component{
 		  		<Button type="danger" onClick={this.set2.bind(this)}>设置2</Button>
 
 		  		<br />
-		  		{ this.fun() }
-		  		{ this.fun2() }
-		  		{ this.fun3() }
+		  		
+		  		{ 
+		  			// 功能点1
+		  			this.fun() 
+		  		}
+
+		  		
+		  		{ 
+		  			// 功能点2
+		  			this.fun2() 
+		  		}
+
+		  		
+		  		{ 
+		  			// 功能点3
+		  			this.fun3() 
+		  		}
 
 		  		
 		  	</div>
 		) 
 	}
 }
+
+
+// Reqwest：非常小；
+// 优点：
+
+// JSONP支持
+// 稳定/IE6 +支持
+// CORS跨域
+// Promise/A支持
