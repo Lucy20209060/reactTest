@@ -47,6 +47,7 @@ export default class Diff extends React.Component{
 	}
 
 	fun3(){
+		// 功能点3
 		return 	this.state.sign === 2 
 				? <DatePicker />
 				: ''
