@@ -6,7 +6,7 @@ import Classify 	from './components/classify/index';
 import Car 			from './components/car/index';
 import Mine 		from './components/mine/index';
 import Login 		from './components/login/index';
-import FluxTest 		from './components/fluxTest/index';
+import FluxTest 	from './components/fluxTest/index';
 import ReduxTest 	from './components/reduxTest/index'
 import About 		from './components/about/index'
 import Diff 		from './components/diff/index'

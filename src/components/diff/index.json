@@ -1,8 +1,82 @@
 {
-	"code":0,
-	"success":true,
-	"data":{
-		"dj":2,
-		"sign":false
-	}
+    "success": true,
+    "code": 0,
+    "data": {
+        "list": [
+            {
+                "key": 9,
+                "name": "卢超",
+                "associatedAccount": "lc",
+                "associatedAccountType": 0,
+                "departmentId": 0,
+                "roleId": 1,
+                "roleName": "管理员",
+                "authType": 1,
+                "authorizeDate": "",
+                "developType": 1,
+                "status": 1,
+                "avatar": "",
+                "avatarColor": "#5C70A4",
+                "userLevel": "admin",
+                "licenseFlag": 0
+            },
+            {
+                "key": 8,
+                "name": "吴彦祖",
+                "associatedAccount": "wyz",
+                "associatedAccountType": 0,
+                "departmentId": 0,
+                "roleId": 1,
+                "roleName": "管理员",
+                "authType": 1,
+                "authorizeDate": "",
+                "developType": 1,
+                "status": 1,
+                "avatar": "",
+                "avatarColor": "#FFB94B",
+                "userLevel": "admin",
+                "licenseFlag": 0
+            },
+            {
+                "key": 7,
+                "name": "彭祖维",
+                "associatedAccount": "pwz",
+                "associatedAccountType": 0,
+                "departmentId": 0,
+                "roleId": 1,
+                "roleName": "管理员",
+                "authType": 1,
+                "authorizeDate": "",
+                "developType": 1,
+                "status": 1,
+                "avatar": "",
+                "avatarColor": "#36A9E7",
+                "userLevel": "admin",
+                "licenseFlag": 0
+            },
+            {
+                "key": 6,
+                "name": "wd",
+                "associatedAccount": "wd",
+                "associatedAccountType": 0,
+                "departmentId": 0,
+                "roleId": 2,
+                "roleName": "员工",
+                "authType": 2,
+                "authorizeDate": "",
+                "developType": 1,
+                "status": 1,
+                "avatar": "",
+                "avatarColor": "#8A8A8A",
+                "userLevel": "normal",
+                "licenseFlag": 0
+            }
+        ]
+    },
+    "pager": {
+        "totalCount": 8,
+        "totalPage": 1,
+        "currentPage": 1,
+        "pageSize": 20
+    }
 }
