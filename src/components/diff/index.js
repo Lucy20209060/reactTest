@@ -2,7 +2,7 @@ import React from 'react';
 import { 
 	Button, 
 	Input, 
-	DatePicker,
+	// DatePicker,
 	Menu, 
 	Icon,
 	Switch,
@@ -21,97 +21,12 @@ import json from './index.json'
 // console.log(json)
 
 const SubMenu = Menu.SubMenu;
-const RadioGroup = Radio.Group;
+// const RadioGroup = Radio.Group;
 
 const logo = 'http://cdn.poc.allinbots.com/codestore-assets/frontend/0.0.1/tfs/TB1hRpAaY_I8KJjy1XaXXbsxpXa-200-60.png'
 
 
-const columns = [{
-	title: ' ',
-	dataIndex: 'avatar',
-	width:85,
-	render: (text, record, index) => {
-		return 	<span 
-					className="tdImg"
-					style={{
-						background:record.avatarColor
-					}}
-				>{record.name.slice(0,2)}</span>
-	},
-  },{
-	title: '姓名',
-	dataIndex: 'name',
-	// width:150
-  }, {
-	title: '登录账号',
-	dataIndex: 'associatedAccount',
-	// width:110
-  }, {
-	title: '状态',
-	dataIndex: 'status',
-	render: text => <span>{text ===1 ?'激活':'未激活'}</span>,
-	// width:90
-  }, {
-	title: '角色',
-	dataIndex: 'roleName',
-	// width:90
-  }, {
-	title: '开发应用权限',
-	dataIndex: 'developType',
-	render: text => <span>{text ===1 ?'有':'无'}</span>,
-	// width:130
-  },{
-	title: '操作',
-	dataIndex: 'key',
-	render: text => <span>
-						<Button type="primary">修改</Button>
-						<Button>重置密码</Button>
-						<Button type="danger">删除</Button>
-					</span>
-  }];
 
-  const columns1 = [{
-	title: 'Name',
-	dataIndex: 'name',
-  }, {
-	title: 'Age',
-	dataIndex: 'age',
-  }, {
-	title: 'Address',
-	dataIndex: 'address',
-  }];
-
-  const data1 = [{
-	key: '1',
-	name: 'John Brown',
-	age: 32,
-	address: 'New York No. 1 Lake Park',
-  }, {
-	key: '2',
-	name: 'Jim Green',
-	age: 42,
-	address: 'London No. 1 Lake Park',
-  }, {
-	key: '3',
-	name: 'Joe Black',
-	age: 32,
-	address: 'Sidney No. 1 Lake Park',
-  }, {
-	key: '4',
-	name: 'Disabled User',
-	age: 99,
-	address: 'Sidney No. 1 Lake Park',
-  }];
-  
-  // rowSelection object indicates the need for row selection
-  const rowSelection = {
-	onChange: (selectedRowKeys, selectedRows) => {
-	  console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-	},
-	getCheckboxProps: record => ({
-	  disabled: record.name === 'Disabled User', // Column configuration not to be checked
-	}),
-  };
 
 export default class Diff extends React.Component{
 
@@ -190,7 +105,7 @@ export default class Diff extends React.Component{
 
 	// 切换版本
 	handleSizeChange(e){
-		console.log(e)
+		console.log(e.target.value)
 		this.setState({ version: e.target.value });
 	}
 
@@ -200,6 +115,73 @@ export default class Diff extends React.Component{
 		
 		const cla = cs('bar-left',this.state.theme);
 		const title = editLogo
+
+		const columns = [{
+	title: ' ',
+	dataIndex: 'avatar',
+	width:85,
+	render: (text, record, index) => {
+		return 	<span 
+					className="tdImg"
+					style={{
+						background:record.avatarColor
+					}}
+				>{record.name.slice(0,2)}</span>
+	},
+  },{
+	title: '姓名',
+	dataIndex: 'name',
+	// width:150
+  }, {
+	title: '登录账号',
+	dataIndex: 'associatedAccount',
+	// width:110
+  }, {
+	title: '状态',
+	dataIndex: 'status',
+	render: text => <span>{text ===1 ?'激活':'未激活'}</span>,
+	// width:90
+  }, {
+	title: '角色',
+	dataIndex: 'roleName',
+	// width:90
+  }, {
+	title: '开发应用权限',
+	dataIndex: 'developType',
+	render: text => <span>{text ===1 ?'有':'无'}</span>,
+	// width:130
+  },{
+	title: '操作',
+	dataIndex: 'key',
+	render: text => <span>
+						<Button type="primary" size="small">修改</Button>
+						<Button size="small">重置密码</Button>
+						<Button type="danger" size="small">删除</Button>
+						{
+							this.state.version === '1' 
+							? <Button size="small">A功能</Button>
+							: ''
+						}
+						{
+							this.state.version === '2' 
+							? 	<div>
+									<Button size="small">A功能</Button>
+									<Button size="small">B功能</Button>
+								</div>
+							: ''
+						}
+					</span>
+  }];
+  
+// rowSelection object indicates the need for row selection
+const rowSelection = {
+	onChange: (selectedRowKeys, selectedRows) => {
+	  console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+	},
+	getCheckboxProps: record => ({
+	  disabled: record.name === 'Disabled User', // Column configuration not to be checked
+	}),
+};
 		return (
 		  	<div className="employee-list">
 
@@ -280,7 +262,7 @@ export default class Diff extends React.Component{
 				<Modal
 					title="自定义UI界面"
 					maskClosable={false}
-					mask={false}
+					mask={true}
 					visible={this.state.visible}
 					onOk={this.handleOk.bind(this)}
 					onCancel={this.handleCancel.bind(this)}
