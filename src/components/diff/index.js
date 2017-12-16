@@ -21,7 +21,7 @@ import json from './index.json'
 // console.log(json)
 
 const SubMenu = Menu.SubMenu;
-// const RadioGroup = Radio.Group;
+const RadioGroup = Radio.Group;
 
 const logo = 'http://cdn.poc.allinbots.com/codestore-assets/frontend/0.0.1/tfs/TB1hRpAaY_I8KJjy1XaXXbsxpXa-200-60.png'
 
@@ -43,6 +43,9 @@ export default class Diff extends React.Component{
 			editLogo:'', 				// 编辑 logo URL
 
 			version:-1, 				// 版本 0基础版 1专业版 2企业版
+
+			table_border:false, 			// 表格边框
+			table_img_radius:true,   	// 表格头像 圆形 方形
         };  
     }  
   
@@ -103,6 +106,19 @@ export default class Diff extends React.Component{
 		});
 	}
 
+	// 表格边框
+	tableBorder(){
+		this.setState({
+			table_border:!this.state.table_border
+		})
+	}
+	// 头像形状
+	tableRadius(){
+		this.setState({
+			table_img_radius:!this.state.table_img_radius
+		})
+	}
+
 	// 切换版本
 	handleSizeChange(e){
 		console.log(e.target.value)
@@ -124,7 +140,8 @@ export default class Diff extends React.Component{
 		return 	<span 
 					className="tdImg"
 					style={{
-						background:record.avatarColor
+						background:record.avatarColor,
+						borderRadius:this.state.table_img_radius?'25px':'4px'
 					}}
 				>{record.name.slice(0,2)}</span>
 	},
@@ -209,20 +226,14 @@ const rowSelection = {
 							<Icon type="inbox" />
 							<span>审批管理</span>
 						</Menu.Item>
-						<SubMenu key="sub1" title={<span><Icon type="mail" /><span>应用管理</span></span>}>
-							<Menu.Item key="5">页面 4-1</Menu.Item>
-							<Menu.Item key="6">页面 4-2</Menu.Item>
-							<Menu.Item key="7">页面 4-3</Menu.Item>
-							<Menu.Item key="8">页面 4-4</Menu.Item>
-						</SubMenu>
-						<SubMenu key="sub2" title={<span><Icon type="appstore" /><span>日志查询</span></span>}>
-							<Menu.Item key="9">页面 5-1</Menu.Item>
-							<Menu.Item key="10">页面 5-2</Menu.Item>
-							<SubMenu key="sub3" title="页面 5-3">
-							<Menu.Item key="11">页面 5-3-1</Menu.Item>
-							<Menu.Item key="12">页面 5-3-2</Menu.Item>
-							</SubMenu>
-						</SubMenu>
+						<Menu.Item key="4">
+							<Icon type="mail" />
+							<span>应用管理</span>
+						</Menu.Item>
+						<Menu.Item key="5">
+							<Icon type="appstore" />
+							<span>日志查询</span>
+						</Menu.Item>
 					</Menu>
 				</div>
 
@@ -243,12 +254,23 @@ const rowSelection = {
 						<div className="button-wrap">
 							<p>
 								<Button type="primary">添加员工</Button>
-								<Button>批量导入</Button>
+								{
+									this.state.version ==='1' || this.state.version ==='2' 
+									? <Button>批量导入</Button>
+									:''
+								}
 								<Button>删除</Button>
 								<Button>导出全部员工信息</Button>
+								{
+									this.state.version ==='2' 
+									? <Button>其他功能</Button>
+									:''
+								}
 							</p>
-
+							
+							{/* 表格区 */}
 							<Table
+								bordered={this.state.table_border}
 								filterMultiple={false}
 								rowSelection={rowSelection} 
 								columns={columns} 
@@ -305,10 +327,16 @@ const rowSelection = {
 					<dl>
 						<dt>列表</dt>
 						<dd>
-							
+							<span>表格边框</span>
+							<div><Switch onChange={this.tableBorder.bind(this)} /></div>
 						</dd>
 						<dd>
-							
+							<span>头像形状</span>
+							{/* <div><Switch onChange={this.tableRadius.bind(this)} /></div> */}
+							<RadioGroup onChange={this.tableRadius.bind(this)} value={this.state.table_img_radius}>
+								<Radio value={true}>圆形</Radio>
+								<Radio value={false}>方形</Radio>
+							</RadioGroup>
 						</dd>
 					</dl>
 					
