@@ -40,7 +40,7 @@ export default class Diff extends React.Component{
 
 			version:'0', 				// 版本 0基础版 1专业版 2企业版
 
-			table_border:false, 			// 表格边框
+			table_border:false, 		// 表格边框
 			table_img_radius:true,   	// 表格头像 圆形 方形
         };  
     }  
