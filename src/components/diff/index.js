@@ -12,8 +12,6 @@ import {
 	Tooltip,
 	Table,
 } from 'antd';
-// import { SketchPicker } from 'react-color'
-
 import cs from 'classnames'
 
 import './index.css'
@@ -24,8 +22,6 @@ const SubMenu = Menu.SubMenu;
 const RadioGroup = Radio.Group;
 
 const logo = 'http://cdn.poc.allinbots.com/codestore-assets/frontend/0.0.1/tfs/TB1hRpAaY_I8KJjy1XaXXbsxpXa-200-60.png'
-
-
 
 
 export default class Diff extends React.Component{
@@ -42,7 +38,7 @@ export default class Diff extends React.Component{
 			logoUrl:'', 				// logo URL
 			editLogo:'', 				// 编辑 logo URL
 
-			version:-1, 				// 版本 0基础版 1专业版 2企业版
+			version:'0', 				// 版本 0基础版 1专业版 2企业版
 
 			table_border:false, 			// 表格边框
 			table_img_radius:true,   	// 表格头像 圆形 方形
@@ -246,8 +242,12 @@ const rowSelection = {
 							<Radio.Button value="1">专业版</Radio.Button>
 							<Radio.Button value="2">企业版</Radio.Button>
 						</Radio.Group>
-
-						<Icon type="form" onClick={this.editModal.bind(this)} />
+						{
+							this.state.version === '2'
+							? <Icon type="form" onClick={this.editModal.bind(this)} />
+							: ''
+						}
+						
 					</header>
 					{/* 下部 内容区 */}
 					<div className="page-list-wrap">
