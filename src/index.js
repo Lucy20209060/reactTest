@@ -20,10 +20,6 @@ import './tools/reset/reset.css';
 import './tools/font/iconfont.css';
 import './tools/reset/rem';
 
-require('es5-shim');
-require('es5-shim/es5-sham');
-require('console-polyfill');
-
 LogRocket.init('3mufmj/my-app');
 
 ReactDOM.render(
