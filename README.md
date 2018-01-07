@@ -4,6 +4,16 @@ http://localhost:3001/
 监听sass
 npm run watch-css
 
+LogRocket初探
+1. 官网注册账号
+2. npm i --save logrocket
+3. 代码中引入
+  import LogRocket from 'logrocket';
+  // Initialize LogRocket with your app ID
+  LogRocket.init('3muf***/m***pp');
+
+详情见 http://www.zcfy.cc/article/redux-logging-in-production-with-logrocket-mdash-sitepoint-3612.html
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
