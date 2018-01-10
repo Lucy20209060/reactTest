@@ -18,24 +18,24 @@ export default class Car extends React.Component{
 
 	//耗时操作放在这里面   
     componentDidMount() {
-        this.getNet();  
+        // this.getNet();  
         // 路由信息 在this.props.match中
         console.log(this.props.match.params.id)
 
-        this.searchcategory();
+        // this.searchcategory();
 
 
-        post(goods.searchcategory, {
-        // get(goods.searchcategory, {
-            id:12,
-            page:1,
-            site_id:'',
-            show_site_image:0
-        }).then(res => {
-            return res.json()
-        }).then(json => {
-            console.log(json)
-        })
+        // post(goods.searchcategory, {
+        // // get(goods.searchcategory, {
+        //     id:12,
+        //     page:1,
+        //     site_id:'',
+        //     show_site_image:0
+        // }).then(res => {
+        //     return res.json()
+        // }).then(json => {
+        //     console.log(json)
+        // })
     }
 
 

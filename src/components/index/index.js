@@ -21,6 +21,29 @@ export default class Index extends React.Component{
 	    	background:'#333'
 		}
 	}
+
+	// 组件即将渲染
+    componentWillMount() {
+		const a = {
+			curPage:1,
+			total:10,
+			pageSize:100
+		}
+		const b = {
+			oldPage:3
+		}
+		//const obj = Object.assign({},a,b,{'name':'lucy'})
+		//console.log(obj)
+
+		// 浅复制 就像一个人 给了另一个名字一样 两个名字都是指向一个人
+		const a1 = Object.assign(a)
+		a1.curPage = '哈哈哈'
+		// 修改a1,a也变化了 a a1指向的一个实体
+		console.log(a,a1)
+
+		// 浅拷贝(影子克隆):只复制对象的基本类型,对象类型,仍属于原来的引用.
+		// 深拷贝(深度克隆):不紧复制对象的基本类,同时也复制原对象中的对象.就是说完全是新对象产生的.
+    }
 	
 	// 自动绑定this测试
 	testClick1(index){
