@@ -57,6 +57,7 @@ export default class Index extends React.Component{
 		c1.curPage = 1000
 		console.log(a,c1)
 
+		// 深拷贝 方法2
 		const O1 = {
 			curPage:1,
 			total:10,
