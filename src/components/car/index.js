@@ -12,7 +12,12 @@ export default class Car extends React.Component{
             dataSource: '购物车',  
             load:false,  
             text:[],
-            page:1
+            page:1,
+            pager:{
+                curPage:1,
+                totalPage:10,
+                pageSize:10
+            }
         };  
     }  
 
@@ -91,6 +96,11 @@ export default class Car extends React.Component{
                 page: 1
             });
         }
+
+        // 修改state某对象中的某个属性的值 的方法
+        this.state.pager.curPage = 1111;
+        this.setState({});
+        console.log(this.state.pager)
         
     }
 
