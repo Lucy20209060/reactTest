@@ -15,6 +15,7 @@ import $ from 'jquery'
 
 // 登录标志
 let loginSign = true
+let tem = []
 
 $.ajax({
 	type: "GET",
@@ -25,12 +26,43 @@ $.ajax({
 	success: function(data){
 		console.log(data)	
 		loginSign = false
+
+		tem = [
+			{
+				path:'/index',
+				component:Index
+			},
+			{
+				path:"/car/:id",
+				component:Car
+			},
+			{
+				path:"/mine",
+				component:Mine
+			},
+			{
+				path:"/fluxTest",
+				component:FluxTest
+			},
+			{
+				path:"/reduxTest",
+				component:ReduxTest
+			},
+			{
+				path:"/login",
+				component:Login
+			},
+			{
+				path:"/about",
+				component:About
+			},
+			{
+				path:"/diff",
+				component:Diff
+			}
+		]
 	}
 });
-
-console.log(11111)
-
-
 
 
 export default class App extends React.Component{  
@@ -41,8 +73,15 @@ export default class App extends React.Component{
 				<div style={{height:'100%'}}>
 				
 					<Route exact path="/" render={ () => ( <Redirect to="/index" /> ) } />
+					{
+						tem.map((item,index) => {
+							return (
+								<Route key={index} path={item.path} component={item.component}/>
+							)
+						})
+					}
 
-					<Route path="/index" component={ loginSign ? Index : Login } />
+					{/* <Route path="/index" component={ loginSign ? Index : Login  }/>
 
 				    <Route path="/classify" component={ loginSign ? Classify : Login } />
 
@@ -58,13 +97,13 @@ export default class App extends React.Component{
 
 				    <Route path="/about" component={About} />
 
-				    <Route path="/diff" component={Diff} />
+				    <Route path="/diff" component={Diff} /> */}
 
-			    	{/*
-				    <Route path="/404" component={About} />
-				    <Redirect from='*' to='/404' />
+			    	
+				    {/* <Route path="/404" component={About} />*/}
+				    <Redirect from='*' to='/404' /> 
 
-			    	*/}
+			    	
 
 				</div>
 			</Router>
