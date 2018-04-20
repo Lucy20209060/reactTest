@@ -11,8 +11,27 @@ import ReduxTest 	from './components/reduxTest/index'
 import About 		from './components/about/index'
 import Diff 		from './components/diff/index'
 
+import $ from 'jquery'
+
 // 登录标志
-const loginSign = true
+let loginSign = true
+
+$.ajax({
+	type: "GET",
+	url: "/api.php?s=api/category/getlevel1",
+	data: {},
+	dataType: "json",
+	async:false,
+	success: function(data){
+		console.log(data)	
+		loginSign = false
+	}
+});
+
+console.log(11111)
+
+
+
 
 export default class App extends React.Component{  
 

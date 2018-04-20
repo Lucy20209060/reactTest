@@ -6,7 +6,7 @@
 const apiPre = '/api.php';
 
 // 获取地域列表
-export const api_getlist = `${apiPre}?s=api/site/getlist`;
+export const api_getlist = `${apiPre}?s=api/category/getlevel1`;
 
 export const goods = {
 	info:`${apiPre}?s=api/goods/info`,

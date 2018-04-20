@@ -23,7 +23,7 @@ export default class Car extends React.Component{
 
 	//耗时操作放在这里面   
     componentDidMount() {
-        // this.getNet();  
+        this.getNet();  
         // 路由信息 在this.props.match中
         console.log(this.props.match.params.id)
 
@@ -50,23 +50,23 @@ export default class Car extends React.Component{
             原生fetch操作 post 
             get操作只能将参数拼接在url中
         */
-		// fetch(goods.searchcategory,{
-		// 	method: 'POST',
-		// 	body: JSON.stringify({
-		// 		id:12,
-		// 		page:1,
-		// 		site_id:'',
-		// 		show_site_image:0
-		// 	})
-		// })
-		// .then(response => response.json())  
-        // .then(res => { 
+		fetch(goods.searchcategory,{
+			method: 'POST',
+			body: JSON.stringify({
+				id:12,
+				page:1,
+				site_id:'',
+				show_site_image:0
+			})
+		})
+		.then(response => response.json())  
+        .then(res => { 
 
-        //   console.log(res)
-        // })  
-        // .catch((error) => {  
-        //   console.log("error");  
-        // });
+          console.log(res)
+        })  
+        .catch((error) => {  
+          console.log("error");  
+        });
     }
 
 	getNet(){ 
@@ -129,9 +129,9 @@ export default class Car extends React.Component{
                 >{this.state.page}</p>
                 <p>{[888,<span key={0}>&copy;</span>,<i key={1}>9999</i>]}</p>
 				{
-                    this.state.text.map((e,index) => {
+                    this.state.text.map((item,index) => {
                         return (
-                            <p key={index}>{e.region}{index}</p>
+                            <p key={index}>{item.name}{item.id}</p>
                         )
                     })
                 }
