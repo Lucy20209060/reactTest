@@ -59,6 +59,10 @@ $.ajax({
 			{
 				path:"/diff",
 				component:Diff
+			},
+			{
+				path:"/classify",
+				component:Classify
 			}
 		]
 	}
@@ -101,7 +105,7 @@ export default class App extends React.Component{
 
 			    	
 				    {/* <Route path="/404" component={About} />*/}
-				    <Redirect from='*' to='/404' /> 
+				    {/* <Redirect from='*' to='/404' />  */}
 
 			    	
 
