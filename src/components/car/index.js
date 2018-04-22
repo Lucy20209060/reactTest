@@ -5,6 +5,8 @@ import { api_getlist,goods } from '../../tools/api';
 
 import { get, post } from '../../tools/fetch/index' 
 
+import $ from 'jquery'
+
 export default class Car extends React.Component{  
 	constructor(props) {  
         super(props);   
@@ -26,6 +28,8 @@ export default class Car extends React.Component{
         this.getNet();  
         // 路由信息 在this.props.match中
         console.log(this.props.match.params.id)
+
+        console.log($('#root'))
 
         // this.searchcategory();
 
