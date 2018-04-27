@@ -70,7 +70,6 @@ $.ajax({
 
 
 export default class App extends React.Component{  
-
 	render(){
 		return(
 			<Router>
@@ -107,8 +106,7 @@ export default class App extends React.Component{
 				    {/* <Route path="/404" component={About} />*/}
 				    {/* <Redirect from='*' to='/404' />  */}
 
-			    	
-
+			    
 				</div>
 			</Router>
 		)
