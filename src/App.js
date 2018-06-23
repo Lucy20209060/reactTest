@@ -11,21 +11,21 @@ import ReduxTest 	from './components/reduxTest/index'
 import About 		from './components/about/index'
 import Diff 		from './components/diff/index'
 
-import $ from 'jquery'
+import $ from 'jquery';
 
 // 登录标志
 let loginSign = true
 let tem = []
 
-$.ajax({
-	type: "GET",
-	url: "/api.php?s=api/category/getlevel1",
-	data: {},
-	dataType: "json",
-	async:false,
-	success: function(data){
-		console.log(data)	
-		loginSign = false
+// $.ajax({
+// 	type: "GET",
+// 	url: "/api.php?s=api/category/getlevel1",
+// 	data: {},
+// 	dataType: "json",
+// 	async:false,
+// 	success: function(data){
+// 		console.log(data)	
+// 		loginSign = false
 
 		tem = [
 			{
@@ -65,8 +65,8 @@ $.ajax({
 				component:Classify
 			}
 		]
-	}
-});
+// 	}
+// });
 
 
 export default class App extends React.Component{  

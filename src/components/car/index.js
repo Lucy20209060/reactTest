@@ -2,10 +2,11 @@ import React from 'react';
 import './index.css'
 import Bar from '../common/bar/index';
 import { api_getlist,goods } from '../../tools/api';
+import {merge} from '../../tools/common';
 
-import { get, post } from '../../tools/fetch/index' 
+// import { get, post } from '../../tools/fetch/index';
 
-import $ from 'jquery'
+// import $ from 'jquery';
 
 export default class Car extends React.Component{  
 	constructor(props) {  
@@ -23,13 +24,23 @@ export default class Car extends React.Component{
         };  
     }  
 
+    componentWillMount() {
+        var d1 = new Date();
+        // var d2 = new Date();
+        // d2.setMonth(0);
+        // d2.setDate(6);
+
+        console.log(merge({a:1},{b:2}))
+
+    }
+
 	//耗时操作放在这里面   
     componentDidMount() {
         this.getNet();  
         // 路由信息 在this.props.match中
         console.log(this.props.match.params.id)
 
-        console.log($('#root'))
+        console.log(this.refs.haha.offsetTop)
 
         // this.searchcategory();
 
@@ -140,6 +151,10 @@ export default class Car extends React.Component{
                     })
                 }
 				<Bar/>
+
+
+
+                <div style={{background:'red'}} ref='haha'>哈哈哈</div>
 			</div>
 		);
 	}
