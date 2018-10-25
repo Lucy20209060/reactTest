@@ -10,7 +10,7 @@ let classN = cs({
 	'class2':false,
 	[`class-${tem}`]:typeof tem === 'string' ? true : false
 })
-console.log(classN)
+// console.log(classN)
 
 
 export default class Index extends React.Component{
