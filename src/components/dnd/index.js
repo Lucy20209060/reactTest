@@ -1,10 +1,7 @@
 import React from 'react';
 import './index.css'
+import {parseDiff, Diff, Hunk} from 'react-diff-view';
 
-import { DragDropContextProvider } from 'react-dnd'
-import HTML5Backend from 'react-dnd-html5-backend'
-import Dustbin from './Dustbin'
-import Box from './Box'
 
 export default class Dnd extends React.Component{
 
@@ -21,48 +18,33 @@ export default class Dnd extends React.Component{
         
     }
 
-
-
     // 创建虚拟DOM
 	render(){
+		const diffText = `
+		--- a/splc-core/src/main/java/com/aliyun/splc/core/user/manager/impl/UserManagerImpl.java
+		+++ b/splc-core/src/main/java/com/aliyun/splc/core/user/manager/impl/UserManagerImpl.java
+		@@ -196,7 +196,7 @@
+		Map<UserKeyModel, UserModel> userModels = new HashMap<>();
+		if (CollectionUtil.isNotEmpty(users) ) {
+			List<UserKeyModel> usersCopy = new LinkedList<>(users);
+			-List<List<UserKeyModel>> userModelsPortionList = Lists.partition(usersCopy, 5);
+			+List<List<UserKeyModel>> userModelsPortionList = Lists.partition(usersCopy, 20);
+			for (List<UserKeyModel> usersPortion : userModelsPortionList) {
+				Map<UserKeyModel, UserModel> usersModelPortion = getUsersFromTair(usersPortion);
+			}
+		`
+		const {files} = parseDiff(diffText);
+		console.log(files)
 
-
-		
-
-
-
-
-
+    const renderFile = ({oldRevision, newRevision, type, hunks}) => (
+        <Diff key={oldRevision + '-' + newRevision} viewType="split" diffType={type} hunks={hunks}>
+            {hunks => hunks.map(hunk => <Hunk key={hunk.content} hunk={hunk} />)}
+        </Diff>
+    );
 		return (
-		  	// <ul>
-		  	// 	<li>
-				// 		<span>11</span>
-				// 		<span>12</span>
-				// 		<span>13</span>
-				// 	</li>
-				// 	<li>
-				// 		<span>21</span>
-				// 		<span>22</span>
-				// 		<span>23</span>
-				// 	</li><li>
-				// 		<span>31</span>
-				// 		<span>32</span>
-				// 		<span>33</span>
-				// 	</li>
-				// </ul>
-				
-				<DragDropContextProvider backend={HTML5Backend}>
-				<div>
-					<div style={{ overflow: 'hidden', clear: 'both' }}>
-						<Dustbin />
-					</div>
-					<div style={{ overflow: 'hidden', clear: 'both' }}>
-						<Box name="Glass" />
-						<Box name="Banana" />
-						<Box name="Paper" />
-					</div>
-				</div>
-			</DragDropContextProvider>
+			<div>
+				{/* {files.map(renderFile)} */}
+			</div>
 		) 
 	}
 }

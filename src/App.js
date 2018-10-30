@@ -10,7 +10,7 @@ import FluxTest 	from './components/fluxTest/index';
 import ReduxTest 	from './components/reduxTest/index'
 import About 		from './components/about/index'
 import Diff 		from './components/diff/index'
-// import Dnd 		from './components/dnd/index'
+import Dnd 		from './components/dnd/index'
 
 import $ from 'jquery';
 
@@ -65,10 +65,10 @@ let tem = []
 				path:"/classify",
 				component:Classify
 			},
-			// {
-			// 	path:"/dnd",
-			// 	component:Dnd
-			// }
+			{
+				path:"/dnd",
+				component:Dnd
+			}
 		]
 // 	}
 // });

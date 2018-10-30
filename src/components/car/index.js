@@ -85,15 +85,11 @@ export default class Car extends React.Component{
     }
 
 	getNet(){ 
-		fetch(api_getlist)
+        
+		fetch('/api.php?s=api/goods/searchcategory')
 		.then(response => response.json())  
         .then(res => {  
-            this.setState({
-                text:res.data,
-                dataSource:res.data[0].region
-            }) 
-
-            console.log(this.state.text)
+            console.log(res)
         })  
         .catch((error) => {  
             console.log("error");  
