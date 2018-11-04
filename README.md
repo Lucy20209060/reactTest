@@ -1,6 +1,6 @@
 运行
 npm start
-http://localhost:3001/
+http://localhost:3000/
 监听sass
 npm run watch-css
 
