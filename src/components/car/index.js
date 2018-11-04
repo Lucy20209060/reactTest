@@ -25,6 +25,10 @@ export default class Car extends React.Component{
     }  
 
     componentWillMount() {
+        var a = 11
+        var b = a
+        a = 22
+        console.log(b)
         var d1 = new Date();
         // var d2 = new Date();
         // d2.setMonth(0);
