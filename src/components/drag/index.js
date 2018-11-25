@@ -71,6 +71,7 @@ export default class Drag extends React.Component{
     drop(ev){
         ev.preventDefault();
         var data=ev.dataTransfer.getData("Text");
+        if(!data)return;
         ev.target.appendChild(document.getElementById(data));
     }
 }
