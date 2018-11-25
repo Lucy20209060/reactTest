@@ -27,3 +27,17 @@ export const merge = (target) => {
 	return target;
   };
 
+// 获取拖动元素的id 当前元素没有则向上找父元素的id
+export const getParentNodeId = (node) => {
+	const id = node.getAttribute('id');
+	return id ? id : getParentNodeId(node.parentNode)|| undefined;
+}
+
+let timeOut = null;
+export const delay = (fn) => {
+    // 短时间内清除上一个定时器 不会重复触发fn
+  clearTimeout(timeOut);
+  timeOut = setTimeout(()=>{
+    fn();
+  },100)
+}
