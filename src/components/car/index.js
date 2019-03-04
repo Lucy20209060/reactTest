@@ -25,6 +25,10 @@ export default class Car extends React.Component{
     }  
 
     componentWillMount() {
+        var a = 11
+        var b = a
+        a = 22
+        console.log(b)
         var d1 = new Date();
         // var d2 = new Date();
         // d2.setMonth(0);
@@ -85,11 +89,15 @@ export default class Car extends React.Component{
     }
 
 	getNet(){ 
-        
-		fetch('/api.php?s=api/goods/searchcategory')
+		fetch(api_getlist)
 		.then(response => response.json())  
         .then(res => {  
-            console.log(res)
+            this.setState({
+                text:res.data,
+                dataSource:res.data[0].region
+            }) 
+
+            console.log(this.state.text)
         })  
         .catch((error) => {  
             console.log("error");  
