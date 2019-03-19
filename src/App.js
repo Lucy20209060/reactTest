@@ -12,6 +12,7 @@ import About 		from './components/about/index'
 import Diff 		from './components/diff/index'
 import Dnd 			from './components/dnd/index'
 import Drag 		from './components/drag/index'
+import ScrollLoading from './components/ScrollLoading'
 
 import $ from 'jquery';
 
@@ -73,6 +74,10 @@ let tem = []
 			{
 				path:'/drag',
 				component:Drag
+			},
+			{
+				path:'/scrollLoading',
+				component: ScrollLoading
 			}
 		]
 // 	}
